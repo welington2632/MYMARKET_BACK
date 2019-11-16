@@ -5,7 +5,9 @@ Repositório destinado ao PFC da UMC
 #### Integrantes
 
 Welington Martins
+
 Gustavo Grégio
+
 Nayara Rodrigues
 
 ----------------------------------------------------
