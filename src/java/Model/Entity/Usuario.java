@@ -13,18 +13,16 @@ public class Usuario {
     private int id;
     private String nome;
     private String cnpj;
-    private String usuario;
     private String senha;
     private String email;
     private TipoUsuario tipo;
     private Endereco endereco;
     private Comercio comercio;
 
-    public Usuario(int id, String nome, String cpf, String usuario, String senha, String email, TipoUsuario tipo, Endereco endereco, Comercio comercio) {
+    public Usuario(int id, String nome, String cnpj, String senha, String email, TipoUsuario tipo, Endereco endereco, Comercio comercio) {
         this.id = id;
         this.nome = nome;
-        this.cnpj = cpf;
-        this.usuario = usuario;
+        this.cnpj = cnpj;
         this.senha = senha;
         this.email = email;
         this.tipo = tipo;
@@ -59,13 +57,6 @@ public class Usuario {
         this.cnpj = cnpj;
     }
 
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
 
     public String getSenha() {
         return senha;

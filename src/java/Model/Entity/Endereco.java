@@ -16,6 +16,13 @@ public class Endereco {
         this.numero = numero;
         this.complemento = complemento;
     }
+    
+    public Endereco( String logradouro, String cep, int numero, String complemento) {
+        this.logradouro = logradouro;
+        this.cep = cep;
+        this.numero = numero;
+        this.complemento = complemento;
+    }
 
     public int getId() {
         return id;
