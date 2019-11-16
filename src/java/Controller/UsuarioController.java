@@ -51,4 +51,20 @@ public class UsuarioController extends HttpServlet {
             Logger.getLogger(UsuarioController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public void AtualizarUsuario(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            Usuario usuario = new Usuario();
+            usuario.setId(Integer.parseInt(request.getParameter("id_usuario")));
+            usuario.setNome(request.getParameter("nome"));
+            usuario.setCnpj(request.getParameter("cnpj"));
+            usuario.setEmail(request.getParameter("email"));
+            usuario.setSenha(request.getParameter("senha"));
+            usuario.setEndereco(new Endereco(Integer.parseInt(request.getParameter("id_endereco")), request.getParameter("logradouro"), request.getParameter("cep"), Integer.parseInt(request.getParameter("numero")), request.getParameter("complemento")));
+            UsuarioDAO usuarioDAO = new UsuarioDAO();
+            usuarioDAO.atualizar(usuario);
+        } catch (Exception ex) {
+            Logger.getLogger(UsuarioController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
