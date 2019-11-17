@@ -4,13 +4,12 @@
 <!------ Include the above in your HEAD tag ---------->
 <html>
     <head>
-
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link rel="stylesheet" type="text/css" href="css/login.css">
         <meta charset="UTF-8"/>
-        <title>Login - MyMarket</title>
+        <title>Cadastro - MyMarket</title>
         <!------ Include the above in your HEAD tag ---------->
     </head>
     <body id="LoginForm">
@@ -19,23 +18,33 @@
             <div class="login-form">
                 <div class="main-div">
                     <div class="panel">
-                        <h2>Área de acesso</h2>
-                        <p>Porfavor informe seu email e sua senha</p>
+                        <h2>Área de cadastro</h2>
+                        <p>Porfavor informe seus dados</p>
                     </div>
-                    <form id="Login" method="POST" action="/Logar">
+                    <form id="Login" method="POST" action="/CadastrarUsuario">
                         <div class="form-group">
-                            <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Endereço de email">
+                            <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo">
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" id="inputPassword" name="senha" placeholder="Senha">
+                            <input type="text" class="form-control" id="cnpj" name="cnpj" placeholder="CNPJ">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Endereço de email">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="confirmar_senha" name="confirmar_senha" placeholder="Confirme sua senha">
                         </div>
                         <div class="forgot">
-                            <a href="cadastrar.html">Cadastrar</a>
+                            <a href="index.html">Login</a>
                         </div>
-                        <button type="submit" class="btn btn-primary">Entrar</button>
+                        <button type="submit" class="btn btn-primary">Cadastrar</button>
                     </form>
                 </div>
                 <p class="botto-text"> Versão Alpha</p>
             </div></div>
-    </body>
+    </div>
+</body>
 </html>

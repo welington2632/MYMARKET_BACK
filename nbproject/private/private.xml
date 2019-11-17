@@ -3,10 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Everymind/Documents/NetBeansProjects/MyMarket/src/java/Model/Comercio.java</file>
-            <file>file:/C:/Users/Everymind/Documents/NetBeansProjects/MyMarket/src/java/Model/Endereco.java</file>
-            <file>file:/C:/Users/Everymind/Documents/NetBeansProjects/MyMarket/src/java/Model/TipoUsuario.java</file>
-            <file>file:/C:/Users/Everymind/Documents/NetBeansProjects/MyMarket/src/java/Model/Usuario.java</file>
+            <file>file:/C:/Users/Everymind/Documents/NetBeansProjects/PFC2019/src/java/Model/Entity/TipoUsuario.java</file>
+            <file>file:/C:/Users/Everymind/Documents/NetBeansProjects/PFC2019/src/java/Util/ConnectionFactory.java</file>
+            <file>file:/C:/Users/Everymind/Documents/NetBeansProjects/PFC2019/src/java/Model/DAO/UsuarioDAO.java</file>
+            <file>file:/C:/Users/Everymind/Documents/NetBeansProjects/PFC2019/web/cadastrar.html</file>
+            <file>file:/C:/Users/Everymind/Documents/NetBeansProjects/PFC2019/web/css/registro.css</file>
+            <file>file:/C:/Users/Everymind/Documents/NetBeansProjects/PFC2019/src/java/Model/Entity/Endereco.java</file>
+            <file>file:/C:/Users/Everymind/Documents/NetBeansProjects/PFC2019/web/css/login.css</file>
+            <file>file:/C:/Users/Everymind/Documents/NetBeansProjects/PFC2019/src/java/Model/Entity/Comercio.java</file>
+            <file>file:/C:/Users/Everymind/Documents/NetBeansProjects/PFC2019/src/java/Model/DAO/EnderecoDAO.java</file>
+            <file>file:/C:/Users/Everymind/Documents/NetBeansProjects/PFC2019/src/java/Controller/UsuarioController.java</file>
+            <file>file:/C:/Users/Everymind/Documents/NetBeansProjects/PFC2019/src/java/Model/Entity/Usuario.java</file>
+            <file>file:/C:/Users/Everymind/Documents/NetBeansProjects/PFC2019/web/index.html</file>
         </group>
     </open-files>
 </project-private>

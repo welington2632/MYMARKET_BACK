@@ -42,9 +42,6 @@ public class UsuarioController extends HttpServlet {
         usuario.setCnpj(request.getParameter("cnpj"));
         usuario.setEmail(request.getParameter("email"));
         usuario.setSenha(request.getParameter("senha"));
-        usuario.setEndereco(new Endereco(request.getParameter("logradouro"), request.getParameter("cep"), Integer.parseInt(request.getParameter("numero")), request.getParameter("complemento")));
-        EnderecoDAO enderecoDAO = new EnderecoDAO();
-        enderecoDAO.Criar(usuario.getEndereco());
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         usuarioDAO.Criar(usuario);
         } catch (Exception ex) {
@@ -62,7 +59,7 @@ public class UsuarioController extends HttpServlet {
             usuario.setSenha(request.getParameter("senha"));
             usuario.setEndereco(new Endereco(Integer.parseInt(request.getParameter("id_endereco")), request.getParameter("logradouro"), request.getParameter("cep"), Integer.parseInt(request.getParameter("numero")), request.getParameter("complemento")));
             UsuarioDAO usuarioDAO = new UsuarioDAO();
-            usuarioDAO.atualizar(usuario);
+            //usuarioDAO.atualizar(usuario);
         } catch (Exception ex) {
             Logger.getLogger(UsuarioController.class.getName()).log(Level.SEVERE, null, ex);
         }
