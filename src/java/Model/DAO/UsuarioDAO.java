@@ -10,7 +10,7 @@ public class UsuarioDAO {
     
     public void Criar (Usuario usuario) throws ClassNotFoundException, SQLException {
         Connection con = ConnectionFactory.getConexao();
-        PreparedStatement comand = con.prepareStatement("insert into usuario (id,nome,cnpj,email,senha) values (nextval('seq_usuario'),?,?,?,?");
+        PreparedStatement comand = con.prepareStatement("insert into usuario (id, nome, cnpj, email, senha) values (nextval('seq_usuario'),?,?,?,?)");
         comand.setString(1,usuario.getNome());
         comand.setString(2, usuario.getCpnj());
         comand.setString(3, usuario.getEmail());
