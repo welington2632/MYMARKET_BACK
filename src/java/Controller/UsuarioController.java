@@ -22,54 +22,58 @@ import javax.servlet.http.HttpServletResponse;
     "/Logar"})
 
 public class UsuarioController extends HttpServlet {
-    
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     }
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String uri = request.getRequestURI();
-        if (uri.equals(request.getContextPath() + "/CadastrarUsuario")){
-            Cadastrar(request,response);
-        } else if (uri.equals(request.getContextPath() + "/Logar")){
-            Logar(request,response);
+        if (uri.equals(request.getContextPath() + "/CadastrarUsuario")) {
+            Cadastrar(request, response);
+        } else if (uri.equals(request.getContextPath() + "/Logar")) {
+            Logar(request, response);
         }
     }
-    
-    public void Cadastrar(HttpServletRequest request, HttpServletResponse response){
+
+    public void Cadastrar(HttpServletRequest request, HttpServletResponse response) {
         try {
-        Usuario usuario = new Usuario();
-        usuario.setNome(request.getParameter("nome"));
-        usuario.setCnpj(request.getParameter("cnpj"));
-        usuario.setEmail(request.getParameter("email"));
-        usuario.setSenha(request.getParameter("senha"));
-        UsuarioDAO usuarioDAO = new UsuarioDAO();
-        usuarioDAO.Cadastrar(usuario);
-        request.getSession(true).setAttribute("usuario_logado", usuario);
-        request.getRequestDispatcher("user_area.jsp").forward(request, response);
+            Usuario usuario = new Usuario();
+            usuario.setNome(request.getParameter("nome"));
+            usuario.setCnpj(request.getParameter("cnpj"));
+            usuario.setEmail(request.getParameter("email"));
+            usuario.setSenha(request.getParameter("senha"));
+            UsuarioDAO usuarioDAO = new UsuarioDAO();
+            usuarioDAO.Cadastrar(usuario);
+            request.getSession(true).setAttribute("usuario_logado", usuario);
+            request.getRequestDispatcher("user_area.jsp").forward(request, response);
         } catch (Exception ex) {
             Logger.getLogger(UsuarioController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-     public void Logar(HttpServletRequest request, HttpServletResponse response){
+
+    public void Logar(HttpServletRequest request, HttpServletResponse response) {
         try {
-        Usuario usuario = new Usuario();
-        usuario.setEmail(request.getParameter("email"));
-        usuario.setSenha(request.getParameter("senha"));
-        UsuarioDAO usuarioDAO = new UsuarioDAO();
-        if (usuarioDAO.Validar(usuario)){
-            
-        }
-        request.getSession(true).setAttribute("usuario_logado", usuario);
-        request.getRequestDispatcher("user_area.jsp").forward(request, response);
+            Usuario usuario = new Usuario();
+            usuario.setEmail(request.getParameter("email"));
+            usuario.setSenha(request.getParameter("senha"));
+            UsuarioDAO usuarioDAO = new UsuarioDAO();
+            if (usuarioDAO.Validar(usuario)) {
+                usuario = usuarioDAO.ConsultarPorEmail(usuario);
+                request.getSession(true).setAttribute("usuario_logado", usuario);
+                request.getRequestDispatcher("user_area.jsp").forward(request, response);
+
+            }
+            request.getSession(true).setAttribute("usuario_logado", usuario);
+            request.getRequestDispatcher("user_area.jsp").forward(request, response);
         } catch (Exception ex) {
             Logger.getLogger(UsuarioController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     public void AtualizarUsuario(HttpServletRequest request, HttpServletResponse response) {
         try {
             Usuario usuario = new Usuario();
