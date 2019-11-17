@@ -14,7 +14,7 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.3.1/css/all.min.css" rel="stylesheet">
         <meta charset="UTF-8"/>
         <link rel="stylesheet" href="css/user_area.css">
-        <title>Cadastro - MyMarket</title>
+        <title>Dashboard - MyMarket</title>
     </head>
     <body>      
         <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
@@ -23,7 +23,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <a class="navbar-brand pt-0 text-primary" href="https://www.creative-tim.com/product/argon-dashboard" target="_blank">
-                    Creative Tim
+                    MyMarket
                 </a>
                 <ul class="nav align-items-center d-md-none">
                     <li class="nav-item dropdown">
@@ -143,9 +143,10 @@
                                 <div class=" dropdown-header noti-title">
                                     <h6 class="text-overflow m-0">Welcome!</h6>
                                 </div>
-                                <a href="./examples/profile.html" class="dropdown-item">
+                                <a href="#" class="dropdown-item">
                                     <i class="ni ni-single-02"></i>
-                                    <span>My profile</span>
+                                    <span>My Profile
+                                    </span>
                                 </a>
                                 <a href="./examples/profile.html" class="dropdown-item">
                                     <i class="ni ni-settings-gear-65"></i>

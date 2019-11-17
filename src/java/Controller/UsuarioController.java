@@ -18,7 +18,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = {"/CadastrarUsuario",
     "/ConsultarUsuario",
     "/AtualizarUsuario",
-    "/DeletarUsuario"})
+    "/DeletarUsuario",
+    "/Logar"})
 
 public class UsuarioController extends HttpServlet {
     
@@ -31,11 +32,13 @@ public class UsuarioController extends HttpServlet {
             throws ServletException, IOException {
         String uri = request.getRequestURI();
         if (uri.equals(request.getContextPath() + "/CadastrarUsuario")){
-            CriarUsuario(request,response);
+            Cadastrar(request,response);
+        } else if (uri.equals(request.getContextPath() + "/Logar")){
+            Logar(request,response);
         }
     }
     
-    public void CriarUsuario(HttpServletRequest request, HttpServletResponse response){
+    public void Cadastrar(HttpServletRequest request, HttpServletResponse response){
         try {
         Usuario usuario = new Usuario();
         usuario.setNome(request.getParameter("nome"));
@@ -43,7 +46,25 @@ public class UsuarioController extends HttpServlet {
         usuario.setEmail(request.getParameter("email"));
         usuario.setSenha(request.getParameter("senha"));
         UsuarioDAO usuarioDAO = new UsuarioDAO();
-        usuarioDAO.Criar(usuario);
+        usuarioDAO.Cadastrar(usuario);
+        request.getSession(true).setAttribute("usuario_logado", usuario);
+        request.getRequestDispatcher("user_area.jsp").forward(request, response);
+        } catch (Exception ex) {
+            Logger.getLogger(UsuarioController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+     public void Logar(HttpServletRequest request, HttpServletResponse response){
+        try {
+        Usuario usuario = new Usuario();
+        usuario.setEmail(request.getParameter("email"));
+        usuario.setSenha(request.getParameter("senha"));
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        if (usuarioDAO.Validar(usuario)){
+            
+        }
+        request.getSession(true).setAttribute("usuario_logado", usuario);
+        request.getRequestDispatcher("user_area.jsp").forward(request, response);
         } catch (Exception ex) {
             Logger.getLogger(UsuarioController.class.getName()).log(Level.SEVERE, null, ex);
         }
