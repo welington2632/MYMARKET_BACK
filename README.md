@@ -43,3 +43,7 @@ senha text,
 enderecofk integer references endereco(id),
 tipoUsuariofk integer references tipoUsuario(id)
 )
+
+create sequence seq_usuario;
+
+create sequence seq_endereco;
